@@ -1,0 +1,39 @@
+{
+  "name": "api-weatherapp-js",
+  "version": "1.0.0",
+  "description": "Create a weather app using JavaScript and weather API.",
+  "private": true,
+  "dependencies": {
+    "css-loader": "^4.2.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "lodash": "^4.17.20",
+    "style-loader": "^1.2.1",
+    "stylelint": "^13.3.3",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-csstree-validator": "^1.8.0",
+    "stylelint-scss": "^3.17.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tzvaita/api-weatherapp-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tzvaita/api-weatherapp-js/issues"
+  },
+  "homepage": "https://github.com/tzvaita/api-weatherapp-js#readme"
+}
