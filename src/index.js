@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import _ from 'lodash';
 import './style.css';
-import searchForm from './dom';
 import getData from './getInfo';
 
 const mainCont = document.getElementById('content');
@@ -11,7 +10,6 @@ const container = document.createElement('div');
 card.className = 'card';
 container.id = 'container';
 card.appendChild(container);
-formCont.appendChild(searchForm());
 mainCont.appendChild(formCont);
 mainCont.appendChild(card);
 
@@ -32,6 +30,14 @@ const displayAll = (result) => {
       <p>Humidity: ${result.temperature.humidity} %</p>
       <p>Pressure: ${result.temperature.pressure} hpA</p>
       </div>`;
+};
+
+const renderReject = () => {
+  document.querySelector('.card-body').style.display = 'block';
+  const divInfo = document.getElementById('city-info');
+  divInfo.innerHTML = `
+  <h4>Couldnt find city, please type another one!</h4>`;
+  document.getElementById('search').reset();
 };
 
 const renderBackground = (result) => {
@@ -75,24 +81,17 @@ const renderBackground = (result) => {
   }
 };
 
-
-const submitted = document.getElementById('searchBtn');
-submitted.addEventListener('click', (e) => {
-  getData(e)
-    .then(result => {
-      displayAll(result);
-      renderBackground(result);
-    });
-  e.preventDefault();
-});
-
 const changeUnits = (e) => {
   getData(e)
     .then(result => {
+      document.querySelector('.card-body').style.display = 'none';
       displayAll(result);
       renderBackground(result);
+    })
+    .catch(() => {
+      renderReject();
+      document.getElementById('search').defaultValue = '';
     });
-  e.preventDefault();
 };
 const buttonCelsius = document.getElementById('city-cel-btn');
 buttonCelsius.addEventListener('click', changeUnits);

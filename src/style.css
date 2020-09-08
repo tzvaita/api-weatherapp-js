@@ -2,12 +2,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: screen;
-  background-color: aqua;
+  background-image: url('https://media.giphy.com/media/za5xikuRr0OzK/giphy.gif');
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 40%;
+  width: 41%;
   margin: 0 auto;
 }
 
@@ -19,6 +19,47 @@ body {
   padding: 2px 16px;
 }
 
+.card1 {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 41%;
+  margin: 0 auto;
+}
+
+.card1:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#container1 {
+  padding: 2px 16px;
+}
+
 .temperature-info {
   display: flex;
+}
+
+#forms {
+  margin: 0 auto;
+  width: 41%;
+}
+
+#forms h2 {
+  font-size: 20px;
+}
+
+#searchForm input {
+  height: 30px;
+  width: 250px;
+  background-color: greenyellow;
+}
+
+#btns {
+  margin-top: 10px;
+}
+#btns button {
+  background-color: greenyellow;
+  margin: 4px;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
 }
