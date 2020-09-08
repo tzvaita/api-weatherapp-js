@@ -20,7 +20,7 @@ const displayAll = (result) => {
   displayInfo.innerHTML = `
       <h2>${result.name}</h2>
       <h3>${result.date}</h3>
-      <button onclick="console.log('here')"> c </button>
+      
       <div class="temperature-info">
       <img src="http://openweathermap.org/img/wn/${result.weather.icon}@2x.png" alt="${result.weather.icon}" class= "circle-icon"><img>
       <h1>${result.temperature.temp}${result.unit} </h1>
@@ -75,6 +75,7 @@ const renderBackground = (result) => {
   }
 };
 
+
 const submitted = document.getElementById('searchBtn');
 submitted.addEventListener('click', (e) => {
   getData(e)
@@ -84,3 +85,17 @@ submitted.addEventListener('click', (e) => {
     });
   e.preventDefault();
 });
+
+const changeUnits = (e) => {
+  getData(e)
+    .then(result => {
+      displayAll(result);
+      renderBackground(result);
+    });
+  e.preventDefault();
+};
+const buttonCelsius = document.getElementById('city-cel-btn');
+buttonCelsius.addEventListener('click', changeUnits);
+
+const buttonFarenheit = document.getElementById('city-far-btn');
+buttonFarenheit.addEventListener('click', changeUnits);
