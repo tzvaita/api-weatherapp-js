@@ -4,15 +4,16 @@ body {
   background-blend-mode: screen;
   background-image: url('https://media.giphy.com/media/za5xikuRr0OzK/giphy.gif');
 }
+
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 41%;
   margin: 0 auto;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 #container {
@@ -20,14 +21,14 @@ body {
 }
 
 .card1 {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 41%;
   margin: 0 auto;
 }
 
 .card1:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 #container1 {
@@ -56,6 +57,7 @@ body {
 #btns {
   margin-top: 10px;
 }
+
 #btns button {
   background-color: greenyellow;
   margin: 4px;
