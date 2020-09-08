@@ -15,15 +15,12 @@ formCont.appendChild(searchForm());
 mainCont.appendChild(formCont);
 mainCont.appendChild(card);
 
-
-const submitted = document.getElementById('searchBtn');
-submitted.addEventListener('click', (e) => {
-  getData(e)
-    .then(result => {
-      const displayInfo = document.getElementById('container');
-      displayInfo.innerHTML = `
+const displayAll = (result) => {
+  const displayInfo = document.getElementById('container');
+  displayInfo.innerHTML = `
       <h2>${result.name}</h2>
       <h3>${result.date}</h3>
+      <button onclick="console.log('here')"> c </button>
       <div class="temperature-info">
       <img src="http://openweathermap.org/img/wn/${result.weather.icon}@2x.png" alt="${result.weather.icon}" class= "circle-icon"><img>
       <h1>${result.temperature.temp}${result.unit} </h1>
@@ -34,7 +31,56 @@ submitted.addEventListener('click', (e) => {
       <p>Feels like: ${result.temperature.feels_like} ${result.unit} </p>
       <p>Humidity: ${result.temperature.humidity} %</p>
       <p>Pressure: ${result.temperature.pressure} hpA</p>
-  </div>`;
+      </div>`;
+};
+
+const renderBackground = (result) => {
+  document.body.style.backgroundColor = 'lightblue';
+  const weatherToSearch = result.weather.main;
+  switch (weatherToSearch) {
+    case 'Rain':
+    case 'Drizzle':
+    case 'Squall':
+      document.body.style.backgroundImage = "url('https://media.giphy.com/media/Il9f7ZhytEiI0/giphy.gif')";
+      break;
+    case 'Snow':
+      document.body.style.backgroundImage = "url('https://media.giphy.com/media/FoVi0LDjy1XS8/giphy.gif')";
+      break;
+    case 'Clear':
+      document.body.style.backgroundImage = "url('https://media.giphy.com/media/G1T5M0qT6ZJlu/giphy.gif')";
+      break;
+    case 'Thunderstom':
+      document.body.style.backgroundImage = "url('https://media.giphy.com/media/3oEjHB1EKuujDjYFWw/giphy.gif')";
+      break;
+    case 'Smoke':
+    case 'Fog':
+    case 'Haze':
+    case 'Mist':
+      document.body.style.backgroundImage = "url('https://media.giphy.com/media/3nQWWe5X1PD8s/giphy.gif')";
+      break;
+    case 'Clouds':
+      document.body.style.backgroundImage = "url('https://media.giphy.com/media/xT9GEDhzERbjDD15O8/giphy.gif')";
+      break;
+    case 'Tornado':
+      document.body.style.backgroundImage = "url('https://media.giphy.com/media/MXvDhlmD0eB5qNvvjZ/giphy.gif')";
+      break;
+    case 'Sand':
+    case 'Dust':
+    case 'Ash':
+      document.body.style.backgroundImage = "url('https://media.giphy.com/media/EaVouuqujYqiI/giphy.gif')";
+      break;
+    default:
+      document.body.style.backgroundImage = 'none';
+      break;
+  }
+};
+
+const submitted = document.getElementById('searchBtn');
+submitted.addEventListener('click', (e) => {
+  getData(e)
+    .then(result => {
+      displayAll(result);
+      renderBackground(result);
     });
   e.preventDefault();
 });

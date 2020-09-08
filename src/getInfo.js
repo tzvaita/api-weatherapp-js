@@ -14,7 +14,6 @@ const getData = async (e) => {
       const cityname = responseInfo.name;
       const tempInfo = responseInfo.main;
       const weatherInfo = responseInfo.weather[0];
-      
 
       const cityInfo = {
         name: cityname,
