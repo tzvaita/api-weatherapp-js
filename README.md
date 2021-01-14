@@ -30,7 +30,7 @@ Create a weather app using JavaScript and weather API.
 ## Live Demo
 
 [Live Demo Link](
-https://rawcdn.githack.com/tzvaita/api-weatherapp-js/8fbc059562b534620d21d7448e48f9fb5c75697d/dist/index.html)
+https://rawcdn.githack.com/tzvaita/api-weatherapp-js/e65f4cf9169ddfc5f18d2a1e3d14427619257b94/dist/index.html)
 
 ## Getting Started
 
